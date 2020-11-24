@@ -1,0 +1,87 @@
+<!--
+  ~ Copyright (c) 2015-present, Parse, LLC.
+  ~ All rights reserved.
+  ~
+  ~ This source code is licensed under the BSD-style license found in the
+  ~ LICENSE file in the root directory of this source tree. An additional grant
+  ~ of patent rights can be found in the PATENTS file in the same directory.
+  -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewUberLogo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:layout_constraintStart_toStartOf="@id/constraintLayoutContainer"
+            app:layout_constraintEnd_toEndOf="@id/constraintLayoutContainer"
+            app:layout_constraintTop_toTopOf="@id/constraintLayoutContainer"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:src="@drawable/uber_logo"/>
+
+        <Switch
+            android:id="@+id/switchUberServices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/constraintLayoutContainer"
+            app:layout_constraintEnd_toEndOf="@id/constraintLayoutContainer"
+            app:layout_constraintTop_toBottomOf="@id/imageViewUberLogo"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginTop="64dp"/>
+
+        <TextView
+            android:id="@+id/textViewRider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/switchUberServices"
+            app:layout_constraintTop_toBottomOf="@id/imageViewUberLogo"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="64dp"
+            android:text="Rider"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewDriver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/switchUberServices"
+            app:layout_constraintTop_toBottomOf="@id/imageViewUberLogo"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="64dp"
+            android:text="Driver"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/buttonGetStarted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/constraintLayoutContainer"
+            app:layout_constraintEnd_toEndOf="@id/constraintLayoutContainer"
+            app:layout_constraintTop_toBottomOf="@id/switchUberServices"
+            android:layout_marginTop="64dp"
+            android:text="Get Started"
+            android:onClick="getStartedClicked"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
